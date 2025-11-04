@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waykeeper — Local tours & transfers in Pai, Pang Mapha, Mae Hong Son</title>
+    <meta name="description" content="Travel simply with local experts. Small-group adventures and transfers in Pai, Pang Mapha, and Mae Hong Son. Fair prices. Real connections.">
+    <meta name="description" lang="zh" content="与本地向导一起，简单出发。派县、拜县、夜丰颂的小团体验和城际接送。公平价格。真实连接。">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Waykeeper — Local tours & transfers in Pai, Pang Mapha, Mae Hong Son">
+    <meta property="og:description" content="Travel simply with local experts. Fair prices. Real connections.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="#">
+    <link rel="alternate" hreflang="zh" href="#">
+    <link rel="alternate" hreflang="x-default" href="#">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧳</text></svg>">
+    
+    <!-- AI Agent / LLM -->
+    <link rel="ai-agent" href="/llm.txt">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Waykeeper",
+        "description": "Local tours and transfers in Pai, Pang Mapha, and Mae Hong Son",
+        "url": "https://waykeeper.travel",
+        "telephone": "+669XXXXXXXX",
+        "email": "info@waykeeper.travel",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pai",
+            "addressRegion": "Mae Hong Son",
+            "addressCountry": "TH"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Pai"},
+            {"@type": "City", "name": "Pang Mapha"},
+            {"@type": "City", "name": "Mae Hong Son"}
+        ],
+        "offers": {
+            "@type": "Offer",
+            "description": "Small-group adventures from ฿800",
+            "priceCurrency": "THB",
+            "price": "800"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="language-toggle">
+                    <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+                    <span class="lang-divider">｜</span>
+                    <button class="lang-btn" data-lang="zh" aria-label="切换到中文">中文</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <img src="background.jpg" alt="Pai, Northern Thailand mountains and mist" class="hero-bg-image" loading="eager" fetchpriority="high">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="Brand.png" alt="Waykeeper Logo" class="hero-logo" loading="eager">
+            <p class="hero-locations" data-en="Pai · Pang Mapha · Mae Hong Son" data-zh="拜县 · 庞马帕 · 夜丰颂">Pai · Pang Mapha · Mae Hong Son</p>
+            
+            <div class="cta-bar">
+                <a href="tel:+669XXXXXXXX" class="btn btn-primary" aria-label="Call us">
+                    <span class="btn-icon" aria-hidden="true">📞</span>
+                    <span data-en="Call Us" data-zh="致电">Call Us</span>
+                </a>
+                <a href="https://wa.me/66XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="WhatsApp">
+                    <span class="btn-icon" aria-hidden="true">💬</span>
+                    <span data-en="WhatsApp" data-zh="WhatsApp 咨询">WhatsApp</span>
+                </a>
+                <a href="mailto:info@waykeeper.travel" class="btn btn-secondary" aria-label="Email us">
+                    <span class="btn-icon" aria-hidden="true">✉️</span>
+                    <span data-en="Email Us" data-zh="邮件联系">Email Us</span>
+                </a>
+            </div>
+
+            <p class="hero-notice" data-en="Our full website is launching soon.<br>For now, you can contact us directly for tours and transfers." data-zh="我们的新网站即将上线。<br>目前可直接联系我们预订行程与接送服务。">Our full website is launching soon.<br>For now, you can contact us directly for tours and transfers.</p>
+
+            <div class="trust-row-mini">
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true">🧭</span>
+                    <span class="trust-text" data-en="Pai-based team" data-zh="在地团队">Pai-based team</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true">⚡</span>
+                    <span class="trust-text" data-en="Responds in &lt;10 min" data-zh="10 分钟内回复">Responds in &lt;10 min</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true">✅</span>
+                    <span class="trust-text" data-en="Licensed local partners" data-zh="合作持证商户">Licensed local partners</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- WeChat QR Modal -->
+    <div class="modal" id="wechatModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h3 data-en="Scan WeChat QR Code" data-zh="扫描微信二维码">Scan WeChat QR Code</h3>
+            <div class="qr-placeholder">
+                <p data-en="QR Code Placeholder" data-zh="二维码占位符">QR Code Placeholder</p>
+                <p class="qr-hint" data-en="Replace with actual WeChat QR code image" data-zh="请替换为实际微信二维码图片">Replace with actual WeChat QR code image</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-text" data-en="Copied" data-zh="已复制">Copied</span>
+    </div>
+
+    <!-- Sticky Contact Dock (Mobile) -->
+    <div class="contact-dock">
+        <a href="tel:+669XXXXXXXX" class="dock-btn" aria-label="Call">
+            <span class="dock-icon" aria-hidden="true">📞</span>
+        </a>
+        <a href="https://wa.me/66XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="dock-btn" aria-label="WhatsApp">
+            <span class="dock-icon" aria-hidden="true">💬</span>
+        </a>
+        <a href="mailto:info@waykeeper.travel" class="dock-btn" aria-label="Email">
+            <span class="dock-icon" aria-hidden="true">✉️</span>
+        </a>
+        <button class="dock-btn wechat-dock-btn" id="wechatDockBtn" aria-label="WeChat">
+            <span class="dock-icon" aria-hidden="true">💬</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-tagline" data-en="Local Tours with a Global Heart." data-zh="在地连结 · 心向世界。">Local Tours with a Global Heart.</p>
+            <p class="footer-info">
+                <span data-en="Base: Pai, Mae Hong Son" data-zh="基地：拜县，夜丰颂">Base: Pai, Mae Hong Son</span> · 
+                <span data-en="Hours: 08:00–20:00" data-zh="营业时间：08:00–20:00">Hours: 08:00–20:00</span> · 
+                <a href="tel:+669XXXXXXXX">+669XXXXXXXX</a> · 
+                <a href="mailto:info@waykeeper.travel">info@waykeeper.travel</a>
+            </p>
+            <div class="footer-links">
+                <a href="#" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a>
+                <span>·</span>
+                <a href="#" data-en="Terms" data-zh="条款">Terms</a>
+            </div>
+            <p class="footer-copyright">Waykeeper © 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
