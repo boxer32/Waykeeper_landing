@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Segoe UI', sans-serif;
     color: var(--color-text);
     line-height: 1.5;
     overflow-x: hidden;
@@ -65,7 +65,7 @@ body {
 .lang-btn {
     background: none;
     border: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-text-light);
@@ -73,6 +73,8 @@ body {
     padding: 0.25rem 0.5rem;
     border-radius: 20px;
     transition: var(--transition);
+    min-width: 40px;
+    text-align: center;
 }
 
 .lang-btn.active {
@@ -269,8 +271,34 @@ body {
 }
 
 .btn-icon {
-    font-size: 20px;
-    line-height: 1;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Service Image */
+.service-image {
+    max-width: 100%;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto 32px;
+    display: block;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+    .service-image {
+        max-width: 400px;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        padding: 12px;
+    }
 }
 
 /* Trust Row Mini */
@@ -440,8 +468,9 @@ body {
 }
 
 .dock-icon {
-    font-size: 20px;
-    line-height: 1;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .wechat-dock-btn {
@@ -608,14 +637,34 @@ a:focus {
 }
 
 /* Language switching */
-[data-lang="zh"] {
+/* Hide Chinese content by default, but NOT language toggle buttons */
+p[data-lang="zh"],
+span[data-lang="zh"],
+h1[data-lang="zh"],
+h2[data-lang="zh"],
+h3[data-lang="zh"],
+div[data-lang="zh"] {
     display: none !important;
 }
 
-body.lang-zh [data-lang="en"] {
+body.lang-zh p[data-lang="en"],
+body.lang-zh span[data-lang="en"],
+body.lang-zh h1[data-lang="en"],
+body.lang-zh h2[data-lang="en"],
+body.lang-zh h3[data-lang="en"],
+body.lang-zh div[data-lang="en"] {
     display: none !important;
 }
 
-body.lang-zh [data-lang="zh"] {
-    display: revert !important;
+body.lang-zh p[data-lang="zh"],
+body.lang-zh span[data-lang="zh"],
+body.lang-zh h1[data-lang="zh"],
+body.lang-zh h2[data-lang="zh"],
+body.lang-zh h3[data-lang="zh"],
+body.lang-zh div[data-lang="zh"] {
+    display: block !important;
+}
+
+body.lang-zh span[data-lang="zh"] {
+    display: inline !important;
 }

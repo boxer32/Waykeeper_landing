@@ -1,31 +1,93 @@
 // Language Toggle
 (function() {
-    const langToggle = document.querySelector('.language-toggle');
-    const langButtons = document.querySelectorAll('.lang-btn');
-    const currentLang = localStorage.getItem('waykeeper-lang') || 'en';
-    
-    // Set initial language
-    document.documentElement.lang = currentLang;
-    document.body.classList.add(`lang-${currentLang}`);
-    langButtons.forEach(btn => {
-        if (btn.dataset.lang === currentLang) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Language switch handler
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            localStorage.setItem('waykeeper-lang', lang);
-            document.documentElement.lang = lang;
-            document.body.classList.remove('lang-en', 'lang-zh');
-            document.body.classList.add(`lang-${lang}`);
+    function updateLanguage(lang) {
+        // Update all elements with data-en and data-zh attributes
+        const elements = document.querySelectorAll('[data-en][data-zh]');
+        elements.forEach(element => {
+            const attr = lang === 'zh' ? 'data-zh' : 'data-en';
+            const content = element.getAttribute(attr);
             
-            langButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            if (content) {
+                // Remove all existing content
+                element.innerHTML = '';
+                
+                // Check if content contains HTML tags
+                if (content.includes('<br>') || content.includes('<')) {
+                    element.innerHTML = content;
+                } else {
+                    // Create a new text node to ensure clean replacement
+                    const textNode = document.createTextNode(content);
+                    element.appendChild(textNode);
+                }
+            }
         });
-    });
+        
+        // Force a reflow to ensure changes are visible
+        document.body.offsetHeight;
+        
+        // Update aria-labels for better accessibility
+        const ariaLabels = {
+            'en': {
+                'Call us': 'Call us',
+                'WhatsApp': 'WhatsApp',
+                'WeChat': 'WeChat',
+                'Email us': 'Email us'
+            },
+            'zh': {
+                'Call us': '致电',
+                'WhatsApp': 'WhatsApp 咨询',
+                'WeChat': '微信',
+                'Email us': '邮件联系'
+            }
+        };
+        
+        document.querySelectorAll('[aria-label]').forEach(el => {
+            const currentLabel = el.getAttribute('aria-label');
+            if (currentLabel && ariaLabels[lang][currentLabel]) {
+                el.setAttribute('aria-label', ariaLabels[lang][currentLabel]);
+            }
+        });
+        
+        // Update body class for CSS
+        document.body.classList.remove('lang-en', 'lang-zh');
+        document.body.classList.add(`lang-${lang}`);
+        document.documentElement.lang = lang;
+    }
+    
+    function initLanguageToggle() {
+        const langButtons = document.querySelectorAll('.lang-btn');
+        if (langButtons.length === 0) return;
+        
+        const currentLang = localStorage.getItem('waykeeper-lang') || 'en';
+        
+        // Set initial language
+        updateLanguage(currentLang);
+        langButtons.forEach(btn => {
+            if (btn.dataset.lang === currentLang) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Language switch handler
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.dataset.lang;
+                localStorage.setItem('waykeeper-lang', lang);
+                updateLanguage(lang);
+                
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLanguageToggle);
+    } else {
+        initLanguageToggle();
+    }
 })();
 
 // Modal Controls
