@@ -60,6 +60,11 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .lang-btn {
@@ -68,7 +73,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.9);
     cursor: pointer;
     padding: 0.25rem 0.5rem;
     border-radius: 20px;
@@ -78,16 +83,17 @@ body {
 }
 
 .lang-btn.active {
-    color: var(--color-primary);
-    background: rgba(119, 190, 240, 0.1);
+    color: var(--color-white);
+    background: rgba(119, 190, 240, 0.3);
 }
 
 .lang-btn:hover {
-    color: var(--color-primary);
+    color: var(--color-white);
+    background: rgba(119, 190, 240, 0.2);
 }
 
 .lang-divider {
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.875rem;
 }
 
@@ -138,19 +144,36 @@ body {
     animation: fadeInUp 0.3s ease-out;
 }
 
-.hero-logo {
-    max-width: 480px;
-    width: 100%;
-    height: auto;
-    margin: 0 auto 40px;
-    display: block;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+.hero-logo-text {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #77BEF0;
+    text-align: center;
+    margin: 0 auto 16px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.hero-tagline-text {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #77BEF0;
+    text-align: center;
+    margin: 0 auto 32px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 768px) {
-    .hero-logo {
-        max-width: 600px;
-        margin-bottom: 48px;
+    .hero-logo-text {
+        margin-bottom: 20px;
+    }
+    
+    .hero-tagline-text {
+        margin-bottom: 40px;
     }
 }
 
@@ -486,27 +509,30 @@ body {
 .footer {
     padding: 60px 0 40px;
     text-align: center;
-    background: var(--color-white);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-tagline {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-text);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 16px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-info {
     font-size: 0.875rem;
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.8;
     margin-bottom: 16px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .footer-info a {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     text-decoration: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .footer-info a:hover {
@@ -523,9 +549,10 @@ body {
 }
 
 .footer-links a {
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     transition: var(--transition);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .footer-links a:hover {
@@ -534,8 +561,9 @@ body {
 
 .footer-copyright {
     font-size: 0.875rem;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 400;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */
