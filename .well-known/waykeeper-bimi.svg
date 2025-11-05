@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#ffffff"/>
+  
+  <!-- WAYKEEPER Text -->
+  <text x="200" y="150" font-family="Inter, sans-serif" font-size="48" font-weight="700" letter-spacing="0.1em" text-anchor="middle" fill="#2A527A">WAYKEEPER</text>
+  
+  <!-- Tagline -->
+  <text x="200" y="200" font-family="Inter, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#2A527A">Simply. Fairly. Connected.</text>
+  
+  <!-- Explore Icon (Mountains) -->
+  <g transform="translate(100, 280)">
+    <path d="M 0 40 L 15 20 L 30 25 L 25 15 L 35 5 L 35 40 Z" fill="none" stroke="#4CAF50" stroke-width="2"/>
+    <circle cx="35" cy="5" r="2" fill="#4CAF50"/>
+  </g>
+  <text x="100" y="350" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" fill="#4CAF50">Explore</text>
+  
+  <!-- Move Icon (Motorcycle) -->
+  <g transform="translate(200, 280)">
+    <path d="M 10 30 Q 5 20 10 15 Q 15 10 20 15 Q 25 10 30 15 Q 35 20 30 30 L 25 30 Q 20 25 15 30 Z" fill="none" stroke="#2A527A" stroke-width="2"/>
+    <circle cx="15" cy="30" r="3" fill="#2A527A"/>
+    <circle cx="25" cy="30" r="3" fill="#2A527A"/>
+  </g>
+  <text x="200" y="350" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" fill="#2A527A">Move</text>
+  
+  <!-- Restore Icon (Leaf) -->
+  <g transform="translate(300, 280)">
+    <path d="M 20 40 Q 10 30 15 20 Q 20 10 20 15 Q 25 10 30 15 Q 35 20 30 30 Q 25 35 20 40 Z" fill="none" stroke="#B8860B" stroke-width="2"/>
+    <line x1="20" y1="40" x2="20" y2="50" stroke="#B8860B" stroke-width="2"/>
+  </g>
+  <text x="300" y="350" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" fill="#B8860B">Restore</text>
+</svg>
+
